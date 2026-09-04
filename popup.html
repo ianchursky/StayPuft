@@ -1,0 +1,50 @@
+<!doctype html>
+<!--
+ This page is shown when the extension button is clicked, because the
+ "browser_action" field in manifest.json contains the "default_popup" key with
+ value "popup.html".
+ -->
+<html>
+  <head>
+    <title>SP</title>
+
+    <!--
+      - JavaScript and HTML must be in separate files: https://developer.chrome.com/extensions/contentSecurityPolicy
+     -->
+    </head>
+<body>
+
+    <p>To start...</p>
+    <pre>
+    chrome.runtime.sendMessage('eppiaihlnanchondoakmhknopflaniem', {
+        action: 'start',
+        params: {
+            itemURL: 'http://burnrubbersneakers.com/collections/adidas-shoes/products/adidas-tennis-super-ftwr-white-cyber-met',
+            valueToSearch: '11.5',
+            addToCartURL: '/cart/add',
+            addToCartIDParam: 'id',
+            additionalAddToCartParams: {
+            },
+            attemptCheckout: false,
+            checkoutURL: '/cart',
+            checkoutParams: {
+            },
+            checkoutRedirect: "/cart"    
+        }                  
+
+    }, function(response) {
+
+    }); 
+    </pre>
+    
+    <p>... parameters are extension ID, message, and callback</p>
+
+    <p>To stop...</p>
+    <pre>
+    chrome.runtime.sendMessage('eppiaihlnanchondoakmhknopflaniem', { action: 'stop' }, function(){ });
+    </pre>
+    <p>NOTE: Dev Tools must be docked or else message will not be sent. Query for currentWindow will fail. Also be sure to add the domain to the externally_connectable": { "matches": ["*://*.domain.com/*""] }  object in the manifest.json file.</p>
+
+</body>
+</html>
+

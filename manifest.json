@@ -1,0 +1,46 @@
+﻿{
+    "manifest_version": 2,
+    "name": "StayPuft",
+    "version": "0.1",   
+    "background": {
+      "scripts": ["js/background.js"]
+    },
+    "icons": { 
+        "16": "icons/icon16.png",
+        "48": "icons/icon48.png",
+        "128": "icons/icon128.png" 
+    },    
+    "content_scripts": [
+        {
+            "matches": [
+                "*://*.caliroots.com/*",
+                "*://*.shop-persona.com/*",
+                "*://*.burnrubbersneakers.com/*"
+            ],
+            "js": [
+                "js/staypuft.main.js", 
+                "js/staypuft.init.js"
+            ]
+        },
+        {
+            "matches": [
+                "*://*.burnrubbersneakers.com/cart"
+            ],
+            "js": [
+                "js/staypuft.checkout.js"
+            ]            
+        }
+        
+    ],
+    "externally_connectable": {
+        "matches": [
+            "*://*.caliroots.com/*", 
+            "*://*.shop-persona.com/*", 
+            "*://*.burnrubbersneakers.com/*"
+        ]
+    },  
+    "browser_action": {
+      "default_icon": "icons/icon32.png",
+      "default_popup": "popup.html"
+    }
+}
