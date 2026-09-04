@@ -1,0 +1,3 @@
+# StayPuft
+
+Chrome extension that automates e-commerce checkouts that I wrote for a friend (~2013)...
